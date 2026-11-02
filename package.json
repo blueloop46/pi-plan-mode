@@ -1,0 +1,14 @@
+{
+  "name": "pi-plan-mode",
+  "version": "1.0.0",
+  "description": "Plan mode extension for the pi coding agent",
+  "type": "module",
+  "keywords": ["pi-package"],
+  "license": "MIT",
+  "scripts": {
+    "test": "node --experimental-strip-types --test extensions/utils.test.ts extensions/index.test.ts"
+  },
+  "pi": {
+    "extensions": ["./extensions/index.ts"]
+  }
+}
