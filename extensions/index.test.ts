@@ -149,7 +149,11 @@ try {
 	assert.ok(context.message.content.includes("one configured output destination"));
 	assert.ok(context.message.content.includes("normal assistant conversation a detailed but concise summary"));
 	assert.ok(context.message.content.includes("only a confined change was made to a plan you presented a few turns ago"));
-	assert.ok(context.message.content.indexOf("present the user") < context.message.content.indexOf("Then call plan_exit"));
+	assert.ok(context.message.content.includes("a saved draft is not evidence that planning is complete"));
+	assert.ok(context.message.content.includes("READINESS GATE"));
+	assert.ok(context.message.content.includes("architectural study, option evaluation, requirements discovery, or design decisions"));
+	assert.ok(context.message.content.includes("user explicitly asks to defer it"));
+	assert.ok(context.message.content.indexOf("READINESS GATE") < context.message.content.indexOf("Then call plan_exit"));
 	assert.ok(!context.message.content.includes("~/.pi/agent/plans"));
 	await assert.rejects(h.exit(), /Save a non-empty Markdown plan/);
 	writeFileSync(planPath, " \n");
